@@ -10,14 +10,18 @@ export default function Home() {
       const color2 = `rgba(${Math.floor(255 * y)}, 50, 200, 1)`;
       document.body.style.background = `linear-gradient(to bottom right, ${color1}, ${color2})`;
 
-      const cursor = document.querySelector(".custom-cursor") as HTMLElement;
-      const cursorEffect = document.querySelector(
-        ".cursor-effect",
-      ) as HTMLElement;
-      cursor.style.left = `${e.clientX}px`;
-      cursor.style.top = `${e.clientY}px`;
-      cursorEffect.style.left = `${e.clientX}px`;
-      cursorEffect.style.top = `${e.clientY}px`;
+      const cursor = document.querySelector(".custom-cursor");
+      const cursorEffect = document.querySelector(".cursor-effect");
+
+      if (cursor instanceof HTMLElement) {
+        cursor.style.left = `${e.clientX}px`;
+        cursor.style.top = `${e.clientY}px`;
+      }
+
+      if (cursorEffect instanceof HTMLElement) {
+        cursorEffect.style.left = `${e.clientX}px`;
+        cursorEffect.style.top = `${e.clientY}px`;
+      }
     };
 
     window.addEventListener("mousemove", handleMouseMove);
