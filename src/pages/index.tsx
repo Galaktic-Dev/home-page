@@ -26,7 +26,7 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="container">
-        <h1 className="title">Under Construction</h1>
+        <p className="text-4xl">Under Construction</p>
       </main>
       <style jsx global>{`
         body {
